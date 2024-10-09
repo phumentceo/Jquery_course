@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button class="btn_click">click me</button>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+//    var btnClick = document.querySelector(".btn_click");
+//    btnClick.addEventListener("click", () => {
+//       alert("Hello JS");
+//    })
+
+//    var btnClick = $(".btn_click");
+//    btnClick.click( function(){
+//       alert("Hello Jquery ");
+//    })
+
+//    $(".btn_click").click(() => {
+//       alert("Hello ES6 Arrow Function ");
+//    })
+  
+   let active = 1;
+   $(document).on("click",".btn_click",function () {
+
+      if(active == 1){
+        $(this).text("Thanks");
+        $(this).css("color","red");
+        active = 0;
+      }else{
+        $(this).text("click me");
+        $(this).css("color","blue");
+        active = 1;
+      }
+
+   });
+</script>
+</html>

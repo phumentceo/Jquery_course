@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+          
+           
+          
+        }
+        .btn-click{
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .modal-box {
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* transition: 0.3s; */
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+
+        /* .modal-box.active{
+            transform: translate(-50%,-50%) scale(1);
+        } */
+    </style>
+</head>
+<body>
+
+    <button class="btn-click">click</button>
+
+    <div class="modal-box"></div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    let active = 1;
+    $(document).on("click",".btn-click", function () {
+
+        // $(".modal-box").addClass("active");
+        // $(".modal-box").toggleClass("active");
+
+        // $(".modal-box").toggle(500);
+
+        
+        if(active == 1){
+            $(".modal-box").show(300);
+            active = 0;
+        }else{
+            $(".modal-box").hide(300);
+            active = 1;
+        }
+    });
+</script>
+</html>
