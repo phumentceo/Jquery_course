@@ -12,6 +12,10 @@
             color: red;
             cursor: pointer;
         }
+        .showProduct > img {
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +42,7 @@
 
             <div class="col-lg-3 product mb-3">
                 <div class="card">
-                    <img src="https://www.khoslaonline.com/wp-content/uploads/2023/06/ONE-PLUS-NORD-CE-2-LITE-5G-BLUE-TIDE-6GB128GB.png" alt="">
+                    <img src="https://regen.pk/cdn/shop/products/Regen-iPhone-13-Pro-Max-graphite_df6678d7-e7c4-4be5-9a67-dc5b73b9221d.jpg?v=1682413511" alt="">
                     <div class="card-body">
                         <h4 class="cart-title">Khosla Electronics</h4>
                         <div class="d-flex justify-content-between align-items-center">
@@ -143,7 +147,15 @@
     });
 
     $(document).on("click",'.btnView', function () {
-        alert(1)
+       let img = $(this).closest(".product").find("img").attr("src"); //link image
+       
+       let innerImage = `
+          <img src='${img}'>
+       `;
+
+       $(".showProduct").html(innerImage); //innerHTML 
+
+
     });
 </script>
 </html>
